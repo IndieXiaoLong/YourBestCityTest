@@ -16,7 +16,7 @@
 
 | Language Picker | Home (中文) | Home (English) |
 |:---:|:---:|:---:|
-| ![Language Picker](screenshots/lang-picker.png) | ![Home 中文](screenshots/home-zh.png) | ![Home English](screenshots/home-en.png) |
+| ![Language Picker](https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/lang-picker.png) | ![Home 中文](https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/home-zh.png) | ![Home English](https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/home-en.png) |
 
 ### ✨ Features
 
@@ -114,7 +114,7 @@ MIT
 
 | 语言选择页 | 首页（中文版） | 首页（英文版） |
 |:---:|:---:|:---:|
-| ![语言选择页](screenshots/lang-picker.png) | ![首页（中文版）](screenshots/home-zh.png) | ![首页（英文版）](screenshots/home-en.png) |
+| ![语言选择页](https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/lang-picker.png) | ![首页（中文版）](https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/home-zh.png) | ![首页（英文版）](https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/home-en.png) |
 
 ### ✨ 功能特性
 
