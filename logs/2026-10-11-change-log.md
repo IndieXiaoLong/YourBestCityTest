@@ -75,3 +75,23 @@
 ## 验收情况
 - `git ls-remote origin` 返回 `bbf1604`，与本地 HEAD 一致，推送成功
 - 仓库地址：https://github.com/ByteHephaestus/YourBestCityTest
+
+
+---
+
+# 改动日志 · 2026-10-11 13:33
+
+## 用户输入的 Prompt
+> 这三张图是要保留的（截图：README 应用截图表格在 GitHub 上显示为空白）
+
+## 问题诊断
+- 三张截图（`screenshots/lang-picker.png`、`home-zh.png`、`home-en.png`）本地与 GitHub 远端均存在，README 引用语法正确，文件未丢失
+- 空白原因：GitHub 图片经 `raw.githubusercontent.com` / `camo.githubusercontent.com` 加载，该域名在国内网络下被屏蔽，curl 直链测试无响应
+
+## 改动范围
+- `README.md` 两处截图表格（英文区 + 中文区）：图片地址由相对路径改为 jsDelivr CDN 链接
+  - `https://cdn.jsdelivr.net/gh/ByteHephaestus/YourBestCityTest@main/screenshots/*.png`
+- 提交 `cdd95b2` 并推送至 GitHub
+
+## 验收情况
+- jsDelivr 链接 curl 测试返回 200 OK，Content-Length 与本地文件一致（94616 字节）
