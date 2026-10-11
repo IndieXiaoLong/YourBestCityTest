@@ -95,3 +95,19 @@
 
 ## 验收情况
 - jsDelivr 链接 curl 测试返回 200 OK，Content-Length 与本地文件一致（94616 字节）
+
+
+---
+
+# 改动日志 · 2026-10-11 14:21
+
+## 用户输入的 Prompt
+> 本项目仓库里好像没有 LICENSE 许可文件 → 需要（确认添加 MIT License）
+
+## 改动范围
+- 新增 `LICENSE`：MIT License，Copyright (c) 2026 ByteHephaestus
+- 提交 `8476938` 并推送至 GitHub main 分支
+
+## 验收情况
+- 经 jsDelivr CDN 验证远端文件已生效（本地网络直连 GitHub 受限，走 CDN 核验）
+- GitHub 仓库页将自动识别并展示 MIT 许可标识
