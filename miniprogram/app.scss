@@ -1,0 +1,94 @@
+/* 全局样式 · 动森风（Animal Crossing）：
+   奶油底色 + 圆润卡片 + 粗描边 + 柔和阴影 */
+page {
+  background: #FFF6E5;
+  color: #5B4A3A;
+  font-size: 28rpx;
+  line-height: 1.6;
+  font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+}
+
+/* 通用卡片：奶白底 + 圆角 + 描边 + 硬阴影（动森招牌质感） */
+.ac-card {
+  background: #FFFDF6;
+  border: 4rpx solid #5B4A3A;
+  border-radius: 32rpx;
+  box-shadow: 0 8rpx 0 rgba(91, 74, 58, 0.15);
+}
+
+/* 主按钮（view 实现，便于自定义宽度） */
+.ac-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  box-shadow: 0 6rpx 0 rgba(91, 74, 58, 0.25);
+  font-weight: 700;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.ac-btn:active {
+  transform: translateY(6rpx);
+  box-shadow: 0 0 0 rgba(91, 74, 58, 0.25);
+}
+.ac-btn--primary { background: #7CC47F; color: #fff; }
+.ac-btn--accent  { background: #FFC94D; color: #5B4A3A; }
+.ac-btn--ghost   { background: #FFFDF6; color: #5B4A3A; }
+
+/* 小标签 */
+.ac-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx 20rpx;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  background: #FFE9B8;
+  font-size: 22rpx;
+  font-weight: 600;
+}
+
+/* 进度条 */
+.ac-progress {
+  height: 24rpx;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  background: #FFFDF6;
+  overflow: hidden;
+}
+.ac-progress__inner {
+  height: 100%;
+  background: linear-gradient(90deg, #7CC47F, #A8E063);
+  border-radius: 999rpx;
+  transition: width 0.25s ease;
+}
+
+/* 维度条形图 */
+.dim-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.dim-row__label {
+  width: 150rpx;
+  font-size: 24rpx;
+  flex-shrink: 0;
+}
+.dim-row__bar {
+  flex: 1;
+  height: 20rpx;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  background: #FFFDF6;
+  overflow: hidden;
+}
+.dim-row__fill {
+  height: 100%;
+  border-radius: 999rpx;
+}
+.dim-row__value {
+  width: 70rpx;
+  text-align: right;
+  font-size: 24rpx;
+  font-weight: 700;
+  flex-shrink: 0;
+}

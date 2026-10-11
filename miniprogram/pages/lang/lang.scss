@@ -1,0 +1,109 @@
+.page {
+  min-height: 100vh;
+  padding: 0 32rpx 60rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  text-align: center;
+  padding: 100rpx 0 40rpx;
+}
+.hero__island { font-size: 120rpx; line-height: 1; }
+.hero__title {
+  margin-top: 28rpx;
+  font-size: 52rpx;
+  font-weight: 900;
+  letter-spacing: 2rpx;
+}
+.hero__subtitle {
+  margin-top: 14rpx;
+  font-size: 24rpx;
+  color: #9A7B5F;
+}
+
+.lang-tip {
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #5B4A3A;
+  margin: 30rpx 0 28rpx;
+}
+
+.lang-card {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 28rpx;
+  margin-bottom: 28rpx;
+}
+.lang-card:active {
+  background: #EAF7E4;
+}
+.lang-card__badge {
+  width: 96rpx;
+  height: 96rpx;
+  border: 4rpx solid #5B4A3A;
+  border-radius: 50%;
+  background: #FFF6E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  flex-shrink: 0;
+}
+.lang-card__info { flex: 1; margin-left: 24rpx; }
+.lang-card__name { font-size: 36rpx; font-weight: 900; }
+.lang-card__desc { font-size: 22rpx; color: #9A7B5F; margin-top: 6rpx; }
+.lang-card__go {
+  font-size: 40rpx;
+  font-weight: 900;
+  color: #3E7C4F;
+  flex-shrink: 0;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 60rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #B99B7A;
+}
+
+/* 英文版欢迎屏 */
+.welcome {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 48rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.welcome__flag { font-size: 120rpx; line-height: 1; }
+.welcome__title {
+  margin-top: 32rpx;
+  font-size: 60rpx;
+  font-weight: 900;
+  letter-spacing: 2rpx;
+  color: #5B4A3A;
+}
+.welcome__subtitle {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #9A7B5F;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+.welcome__panda {
+  margin-top: 40rpx;
+  font-size: 56rpx;
+  letter-spacing: 16rpx;
+}
+.welcome__btn {
+  margin-top: 60rpx;
+  height: 100rpx;
+  padding: 0 64rpx;
+  font-size: 32rpx;
+}

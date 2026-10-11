@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.idea/
+.vscode/
+AGENT.md
+project.private.config.json

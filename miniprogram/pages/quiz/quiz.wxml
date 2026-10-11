@@ -1,0 +1,38 @@
+<!-- 答题页 -->
+<view class="page">
+  <view class="quiz-head">
+    <view class="quiz-head__row">
+      <text class="quiz-head__step">{{stepText}}</text>
+      <text class="quiz-head__pct">{{percent}}%</text>
+    </view>
+    <view class="ac-progress">
+      <view class="ac-progress__inner" style="width: {{percent}}%"></view>
+    </view>
+  </view>
+
+  <view class="ac-card question" wx:if="{{view}}">
+    <view class="question__no">Q{{view.id}}</view>
+    <view class="question__text">{{view.t}}</view>
+  </view>
+
+  <view class="options" wx:if="{{view}}">
+    <view
+      wx:for="{{view.opts}}"
+      wx:key="index"
+      class="option ac-card {{picked === index ? 'option--picked' : ''}}"
+      data-index="{{index}}"
+      bindtap="onPick"
+    >
+      <view class="option__letter">{{item.letter}}</view>
+      <view class="option__text">{{item.t}}</view>
+    </view>
+  </view>
+
+  <view class="quiz-foot">
+    <view class="ac-btn ac-btn--ghost quiz-foot__btn" bindtap="onPrev" wx:if="{{index > 0}}">
+      {{s.prev}}
+    </view>
+    <view class="quiz-foot__spacer" wx:else></view>
+    <view class="ac-btn ac-btn--ghost quiz-foot__btn" bindtap="onQuit">{{s.quit}}</view>
+  </view>
+</view>

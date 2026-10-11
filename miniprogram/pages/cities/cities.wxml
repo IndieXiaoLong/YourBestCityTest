@@ -1,0 +1,45 @@
+<!-- 城市图鉴：49 城浏览 -->
+<view class="page">
+  <view class="filters">
+    <view
+      wx:for="{{tiers}}"
+      wx:key="index"
+      class="ac-tag filter {{tierIndex === index ? 'filter--active' : ''}}"
+      data-index="{{index}}"
+      bindtap="onTier"
+    >{{item}}</view>
+  </view>
+
+  <view class="grid">
+    <view class="cell ac-card" wx:for="{{list}}" wx:key="name" data-city="{{item}}" bindtap="onCity">
+      <image class="cell__cover" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+      <view class="cell__body">
+        <view class="cell__name">{{item.name}}</view>
+        <view class="cell__tier">{{item.tier}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 城市详情弹层 -->
+  <view class="mask" wx:if="{{detail}}" bindtap="onCloseDetail">
+    <view class="detail ac-card" catchtap="noop">
+      <image class="detail__cover" src="{{detail.cover}}" mode="aspectFill"></image>
+      <view class="detail__body">
+        <view class="detail__head">
+          <text class="detail__name">{{detail.name}}</text>
+          <text class="ac-tag">{{detailTier}}</text>
+        </view>
+        <view class="detail__tags">
+          <text wx:for="{{detail.tags}}" wx:key="*this" class="detail__tag">#{{item}}</text>
+        </view>
+        <view class="dim-row" wx:for="{{detailDims}}" wx:key="key">
+          <view class="dim-row__label">{{item.name}}</view>
+          <view class="dim-row__bar">
+            <view class="dim-row__fill" style="width: {{item.value}}%; background: {{item.color}}"></view>
+          </view>
+          <view class="dim-row__value">{{item.value}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<!-- 前置页：选择语言 -->
+<view class="page" wx:if="{{!showWelcome}}">
+  <view class="hero">
+    <view class="hero__island">🏝️</view>
+    <view class="hero__title">Your Best City Test</view>
+    <view class="hero__subtitle">测一测你适合哪座城市 · Find Your Best City</view>
+  </view>
+
+  <view class="lang-tip">请选择语言 · Please choose a language</view>
+
+  <view class="lang-card ac-card" bindtap="onZh">
+    <view class="lang-card__badge">🍃</view>
+    <view class="lang-card__info">
+      <view class="lang-card__name">中文版</view>
+      <view class="lang-card__desc">12 个维度 · 49 座城市 · 100 道题</view>
+    </view>
+    <view class="lang-card__go">→</view>
+  </view>
+
+  <view class="lang-card ac-card" bindtap="onEn">
+    <view class="lang-card__badge">🌍</view>
+    <view class="lang-card__info">
+      <view class="lang-card__name">English</view>
+      <view class="lang-card__desc">12 dimensions · 49 cities · 100 questions</view>
+    </view>
+    <view class="lang-card__go">→</view>
+  </view>
+
+  <view class="footer">动森风 · Animal Crossing Style</view>
+</view>
+
+<!-- 英文版欢迎屏：Welcome to China -->
+<view class="welcome" wx:if="{{showWelcome}}">
+  <view class="welcome__flag">🇨🇳</view>
+  <view class="welcome__title">Welcome to China!</view>
+  <view class="welcome__subtitle">From bustling metropolises to laid-back towns,{'\n'}let's find the Chinese city that fits you best.</view>
+  <view class="welcome__panda">🐼 🎋 🏮</view>
+  <view class="ac-btn ac-btn--primary welcome__btn" bindtap="onContinue">
+    Start the Journey →
+  </view>
+</view>

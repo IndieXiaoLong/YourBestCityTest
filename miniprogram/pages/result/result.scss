@@ -1,0 +1,270 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx 32rpx 60rpx;
+  box-sizing: border-box;
+}
+
+/* 结果主卡片 */
+.result-card { overflow: hidden; }
+.result-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 28rpx;
+}
+.result-card__brand { font-size: 24rpx; font-weight: 800; color: #3E7C4F; }
+.result-card__label {
+  font-size: 22rpx;
+  font-weight: 800;
+  background: #EAF7E4;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  padding: 2rpx 18rpx;
+}
+
+.result-card__cover-wrap {
+  position: relative;
+  margin: 0 28rpx;
+  border: 4rpx solid #5B4A3A;
+  border-radius: 24rpx;
+  overflow: hidden;
+  height: 360rpx;
+  background: #DCE9D8;
+}
+.result-card__cover { width: 100%; height: 100%; display: block; }
+.result-card__score {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  background: rgba(255, 253, 246, 0.95);
+  border: 4rpx solid #5B4A3A;
+  border-radius: 24rpx;
+  padding: 10rpx 24rpx;
+  display: flex;
+  align-items: baseline;
+}
+.result-card__score-num { font-size: 52rpx; font-weight: 900; color: #3E7C4F; }
+.result-card__score-unit { font-size: 22rpx; font-weight: 700; margin-left: 6rpx; }
+
+.result-card__body { padding: 28rpx; }
+.result-card__city-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.result-card__city { font-size: 64rpx; font-weight: 900; letter-spacing: 6rpx; }
+.result-card__tags { margin-top: 12rpx; }
+.result-card__tag {
+  font-size: 24rpx;
+  color: #9A7B5F;
+  margin-right: 16rpx;
+}
+.result-card__dims-title {
+  margin: 24rpx 0 16rpx;
+  font-size: 24rpx;
+  font-weight: 800;
+  color: #9A7B5F;
+}
+.result-card__strong { display: flex; flex-wrap: wrap; gap: 12rpx; }
+.result-card__strong-tag { background: #EAF7E4; }
+
+.section-title {
+  margin: 40rpx 0 20rpx 8rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+/* 打卡点 */
+.spot {
+  display: flex;
+  align-items: center;
+  padding: 22rpx 28rpx;
+  margin-bottom: 18rpx;
+}
+.spot__no {
+  width: 56rpx;
+  height: 56rpx;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 50%;
+  background: #FFC94D;
+  font-size: 26rpx;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.spot__body { flex: 1; margin-left: 22rpx; }
+.spot__name { font-size: 30rpx; font-weight: 800; }
+.spot__reason {
+  font-size: 24rpx;
+  color: #9A7B5F;
+  margin-top: 4rpx;
+  line-height: 1.5;
+}
+
+/* 美食 */
+.food {
+  padding: 22rpx 28rpx;
+  margin-bottom: 18rpx;
+}
+.food__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+.food__name { font-size: 30rpx; font-weight: 800; }
+.food__place {
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #3E7C4F;
+  background: #EAF7E4;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  padding: 2rpx 16rpx;
+}
+.food__note {
+  font-size: 24rpx;
+  color: #9A7B5F;
+  margin-top: 10rpx;
+  line-height: 1.5;
+}
+
+/* 备选城市 */
+.alts { display: flex; gap: 20rpx; }
+.alt { flex: 1; overflow: hidden; }
+.alt__cover {
+  width: 100%;
+  height: 150rpx;
+  display: block;
+  border-bottom: 4rpx solid #5B4A3A;
+  background: #DCE9D8;
+}
+.alt__info { padding: 16rpx; text-align: center; }
+.alt__name { font-size: 28rpx; font-weight: 800; }
+.alt__score { font-size: 22rpx; color: #3E7C4F; font-weight: 700; margin-top: 4rpx; }
+
+/* 维度画像 */
+.dims { padding: 28rpx; }
+
+/* 12 维匹配报告 */
+.report-tip {
+  font-size: 22rpx;
+  color: #9A7B5F;
+  margin: -8rpx 0 16rpx 8rpx;
+}
+.report {
+  padding: 24rpx 28rpx;
+  margin-bottom: 20rpx;
+}
+.report__head {
+  display: flex;
+  align-items: center;
+}
+.report__icon {
+  width: 72rpx;
+  height: 72rpx;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36rpx;
+  flex-shrink: 0;
+}
+.report__title { flex: 1; margin-left: 20rpx; }
+.report__name { font-size: 30rpx; font-weight: 800; }
+.report__sub { font-size: 22rpx; color: #9A7B5F; margin-top: 2rpx; }
+.report__level {
+  font-size: 20rpx;
+  font-weight: 800;
+  border: 3rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  padding: 2rpx 16rpx;
+  flex-shrink: 0;
+}
+.report__level--high { background: #7CC47F; color: #fff; }
+.report__level--mid { background: #FFE9B8; color: #5B4A3A; }
+.report__level--low { background: #F5C6B8; color: #5B4A3A; }
+
+.report__bars { margin-top: 18rpx; }
+.report__bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.report__bar-label {
+  width: 44rpx;
+  font-size: 20rpx;
+  color: #9A7B5F;
+  flex-shrink: 0;
+}
+.report__bar {
+  flex: 1;
+  height: 16rpx;
+  border: 2rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  background: #FFFDF6;
+  overflow: hidden;
+}
+.report__bar-fill {
+  height: 100%;
+  border-radius: 999rpx;
+}
+
+.report__text {
+  margin-top: 18rpx;
+  padding: 20rpx;
+  background: #FFF6E5;
+  border: 3rpx dashed #C9B18C;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  line-height: 1.8;
+  color: #6B5744;
+}
+.report__more {
+  margin-top: 14rpx;
+  text-align: center;
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #3E7C4F;
+}
+
+/* 操作区 */
+.share-btn {
+  margin-top: 40rpx;
+  /* 保持 button 默认整行宽度，仅重置外观 */
+  height: 96rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  padding: 0;
+  background: #7CC47F;
+  border: 4rpx solid #5B4A3A;
+  border-radius: 999rpx;
+  color: #fff;
+  box-shadow: 0 6rpx 0 rgba(91, 74, 58, 0.25);
+}
+.share-btn::after { border: none; }
+.share-btn:active { transform: translateY(6rpx); box-shadow: none; }
+.save-btn {
+  margin-top: 24rpx;
+  height: 96rpx;
+  font-size: 28rpx;
+}
+.again-btn {
+  margin-top: 24rpx;
+  height: 84rpx;
+  font-size: 26rpx;
+}
+
+/* 离屏画布移出可视区（宽高固定，不用数据绑定，规避 _getData 渲染层 bug） */
+.offscreen-canvas {
+  position: fixed;
+  left: -2000rpx;
+  top: -2000rpx;
+  width: 600px;
+  height: 900px;
+}

@@ -1,0 +1,49 @@
+<!-- 首页：选版本开测 + 城市图鉴入口 -->
+<view class="page">
+  <view class="lang-switch" bindtap="onSwitchLang">{{lang === 'en' ? '中文' : 'EN'}}</view>
+
+  <view class="hero">
+    <view class="hero__leaf hero__leaf--1">🍃</view>
+    <view class="hero__leaf hero__leaf--2">🍃</view>
+    <view class="hero__island">🏝️</view>
+    <view class="hero__title">{{s.heroTitle}}</view>
+    <view class="hero__subtitle">{{s.heroSub1}}</view>
+    <view class="hero__subtitle">{{s.heroSub2}}</view>
+  </view>
+
+  <view class="section-title">{{s.pickVersion}}</view>
+
+  <view class="versions">
+    <view
+      wx:for="{{versions}}"
+      wx:key="key"
+      class="version ac-card {{version === item.key ? 'version--active' : ''}}"
+      data-key="{{item.key}}"
+      bindtap="onSelectVersion"
+    >
+      <view class="version__badge">{{item.icon}}</view>
+      <view class="version__info">
+        <view class="version__name">{{item.name}}</view>
+        <view class="version__desc">{{item.desc}}</view>
+      </view>
+      <view class="version__count">{{item.count}} {{s.questionsUnit}}</view>
+    </view>
+  </view>
+
+  <view class="ac-btn ac-btn--primary start-btn" bindtap="onStart">
+    {{s.start}}
+  </view>
+
+  <view class="ac-btn ac-btn--ghost cities-btn" bindtap="onCities">
+    {{s.gallery}}
+  </view>
+
+  <view class="history" wx:if="{{lastCity}}">
+    <view class="ac-card history__card" bindtap="onLastResult">
+      <text>{{s.lastPrefix}}</text>
+      <text class="history__city">{{lastCity}}</text>
+    </view>
+  </view>
+
+  <view class="footer">{{s.footer}}</view>
+</view>

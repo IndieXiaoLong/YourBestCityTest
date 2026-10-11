@@ -1,0 +1,126 @@
+<!-- 结果页：本命城市卡片 -->
+<view class="page" wx:if="{{ready}}">
+  <view class="result-card ac-card">
+    <view class="result-card__header">
+      <text class="result-card__brand">🍃 Your Best City Test</text>
+      <text class="result-card__label">{{label}}</text>
+    </view>
+
+    <view class="result-card__cover-wrap">
+      <image class="result-card__cover" src="{{top.city.cover}}" mode="aspectFill" lazy-load>
+      </image>
+      <view class="result-card__score">
+        <text class="result-card__score-num">{{top.score}}</text>
+        <text class="result-card__score-unit">{{s.scoreUnit}}</text>
+      </view>
+    </view>
+
+    <view class="result-card__body">
+      <view class="result-card__city-row">
+        <text class="result-card__city">{{top.city.name}}</text>
+        <text class="ac-tag">{{tierLabel}}</text>
+      </view>
+      <view class="result-card__tags">
+        <text wx:for="{{top.city.tags}}" wx:key="*this" class="result-card__tag">#{{item}}</text>
+      </view>
+      <view class="result-card__dims-title">{{s.strongTitle}}</view>
+      <view class="result-card__strong">
+        <text wx:for="{{strongDims}}" wx:key="key" class="ac-tag result-card__strong-tag">
+          {{item.icon}} {{item.name}}
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 旅游打卡点推荐 -->
+  <block wx:if="{{guide}}">
+    <view class="section-title">{{mustVisitTitle}}</view>
+    <view class="spot ac-card" wx:for="{{guide.spots}}" wx:key="name">
+      <view class="spot__no">{{index + 1}}</view>
+      <view class="spot__body">
+        <view class="spot__name">{{item.name}}</view>
+        <view class="spot__reason">{{item.reason}}</view>
+      </view>
+    </view>
+
+    <!-- 美食推荐 -->
+    <view class="section-title">{{whatToEatTitle}}</view>
+    <view class="food ac-card" wx:for="{{guide.foods}}" wx:key="name">
+      <view class="food__head">
+        <view class="food__name">{{item.name}}</view>
+        <view class="food__place">📌 {{item.place}}</view>
+      </view>
+      <view class="food__note">{{item.note}}</view>
+    </view>
+  </block>
+
+  <!-- 备选城市 -->
+  <view class="section-title">{{s.alsoFit}}</view>
+  <view class="alts">
+    <view class="alt ac-card" wx:for="{{alts}}" wx:key="name">
+      <image class="alt__cover" src="{{item.city.cover}}" mode="aspectFill" lazy-load></image>
+      <view class="alt__info">
+        <view class="alt__name">{{item.city.name}}</view>
+        <view class="alt__score">{{item.score}}%</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 维度画像 -->
+  <view class="section-title">{{s.profile}}</view>
+  <view class="ac-card dims">
+    <view class="dim-row" wx:for="{{dimRows}}" wx:key="key">
+      <view class="dim-row__label">{{item.name}}</view>
+      <view class="dim-row__bar">
+        <view class="dim-row__fill" style="width: {{item.value}}%; background: {{item.color}}"></view>
+      </view>
+      <view class="dim-row__value">{{item.value}}</view>
+    </view>
+  </view>
+
+  <!-- 12 维匹配报告 -->
+  <view class="section-title">{{s.reportTitle}}</view>
+  <view class="report-tip">{{reportTip}}</view>
+  <view
+    class="report ac-card"
+    wx:for="{{reports}}"
+    wx:key="key"
+    data-key="{{item.key}}"
+    bindtap="onToggleReport"
+  >
+    <view class="report__head">
+      <view class="report__icon" style="background: {{item.color}}">{{item.icon}}</view>
+      <view class="report__title">
+        <view class="report__name">{{item.name}}</view>
+        <view class="report__sub">{{s.you}} {{item.user}} · {{top.city.name}} {{item.city}}</view>
+      </view>
+      <view class="report__level report__level--{{item.matchLevel === '高度契合' ? 'high' : item.matchLevel === '基本合拍' ? 'mid' : 'low'}}">
+        {{item.levelText}}
+      </view>
+    </view>
+    <view class="report__bars">
+      <view class="report__bar-row">
+        <text class="report__bar-label">{{s.you}}</text>
+        <view class="report__bar">
+          <view class="report__bar-fill report__bar-fill--user" style="width: {{item.user}}%; background: {{item.color}}"></view>
+        </view>
+      </view>
+      <view class="report__bar-row">
+        <text class="report__bar-label">{{s.cityAbbr}}</text>
+        <view class="report__bar">
+          <view class="report__bar-fill" style="width: {{item.city}}%; background: #C9B18C"></view>
+        </view>
+      </view>
+    </view>
+    <view class="report__text" wx:if="{{expandedReports[item.key]}}">{{item.text}}</view>
+    <view class="report__more">{{expandedReports[item.key] ? s.collapse : s.expand}}</view>
+  </view>
+
+  <!-- 操作区：分享必须为 button（open-type），保持默认整行宽度；其余用 view -->
+  <button class="share-btn" open-type="share" plain="true">{{s.shareBtn}}</button>
+  <view class="ac-btn ac-btn--accent save-btn" bindtap="onSaveCard">{{s.saveBtn}}</view>
+  <view class="ac-btn ac-btn--ghost again-btn" bindtap="onAgain">{{s.againBtn}}</view>
+
+  <!-- 离屏画布：绘制分享卡片（宽高用 CSS 固定，避免数据绑定触发渲染层 bug） -->
+  <canvas type="2d" id="shareCard" class="offscreen-canvas"></canvas>
+</view>
